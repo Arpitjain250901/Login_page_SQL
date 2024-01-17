@@ -1,4 +1,4 @@
-/* login.css */
+
 
 body {
     font-family: 'Arial', sans-serif;
@@ -7,7 +7,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Use min-height instead of height */
+    min-height: 100vh; 
     background-color: #f2f2f2;
   }
   
@@ -17,7 +17,7 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px; /* Add some margin to the container */
+    margin: 20px; 
   }
   
   form {
@@ -50,7 +50,7 @@ body {
     margin-bottom: 10px;
   }
   
-  /* Media queries for responsiveness */
+  
   
   @media screen and (max-width: 600px) {
     .container {
@@ -71,6 +71,6 @@ body {
     }
 }
   
-  /* Add more media queries as needed for other screen sizes */
+ 
   
   

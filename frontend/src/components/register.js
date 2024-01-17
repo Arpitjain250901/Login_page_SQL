@@ -1,17 +1,10 @@
-
-
-
-
-
-
 import "./register.css";
 import React, { Fragment, useState } from 'react';
 import axios from "axios";
 import { validate } from "./validate.js";
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export function Register() {
-
   let navigate = useNavigate();
 
   const [user, setuser] = useState({
@@ -27,30 +20,33 @@ export function Register() {
 
   const registersubmit = async (e) => {
     e.preventDefault();
-    
+
+    console.log("registersubmit function is invoked");
+
+    settext("");
+    seterror("");
 
     try {
+      console.log("registersubmit function is invoked 2");
+
       seterror(validate(user));
 
       if (user.Password !== Confirm_Password) {
         settext("Passwords Not Matched");
         setConfirm_password("");
-      } else if (error === "") {
+      } else if (error.email === "" && error.password === "") {
         const response = await axios.post(`http://localhost:8081/createUser`, user);
-        console.log(response);
+        // console.log(response);
+        settext(response.data);
+
         if (response.status === 201) {
           navigate("/");
         }
-        
-        
       }
     } catch (error) {
       console.error("An error occurred during registration:", error);
     }
   };
-
- // arpitjain123
- //xyz@123!45
 
   const registerdatachange = (e) => {
     setuser({ ...user, [e.target.name]: e.target.value });
@@ -99,9 +95,10 @@ export function Register() {
             value={Email}
             onChange={registerdatachange}
           />
+          <button id="register-btn" onClick={registersubmit}>Register</button>
         </form>
 
-        <button onClick={registersubmit}>Register</button>
+       
         {text && <p className="error-message">{text}</p>}
         {error && <p className="error-message">{error.email} {error.password}</p>}
         <p>Existing User? <button onClick={navigateToLogin}>Log in</button></p>
@@ -111,4 +108,5 @@ export function Register() {
 }
 
 
-//ehferjgt
+
+
