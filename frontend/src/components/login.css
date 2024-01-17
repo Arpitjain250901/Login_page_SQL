@@ -1,0 +1,76 @@
+/* login.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Use min-height instead of height */
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px; /* Add some margin to the container */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  /* Media queries for responsiveness */
+  
+  @media screen and (max-width: 600px) {
+    .container {
+      width: 90%;
+    }
+  }
+  
+  @media screen and (min-width: 601px) and (max-width: 768px) {
+    .container {
+      width: 80%;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
+    .container {
+        width: 50%;
+        margin-bottom: 50px;
+    }
+}
+  
+  /* Add more media queries as needed for other screen sizes */
+  
+  
